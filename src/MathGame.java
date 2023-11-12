@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class MathGame {
@@ -15,6 +16,7 @@ public class MathGame {
     private int streak;
     private int incorrect;
     private String firstOut;
+    private int count;
 
     public MathGame(Player player1, Player player2, Player player3, Scanner scanner) {
         this.player1 = player1;
@@ -30,6 +32,7 @@ public class MathGame {
         streak = 0;
         incorrect = 0;
         firstOut = null;
+        count = 0;
     }
 
     public Player getWinner() {
@@ -49,10 +52,16 @@ public class MathGame {
             } else {
                 System.out.println("INCORRECT!");
                 incorrect++;
-                firstOut = currentPlayer.getName();
+                if (count == 0) {
+                    firstOut = currentPlayer.getName();
+                }
+                if (firstOut.equals(currentPlayer.getName()) && incorrect == 2) {
+                    gameOver = true;
+                }
                 gameOver = incorrect == 2;
                 determineWinner();
                 swapPlayers();
+                count++;
             }
         }
     }
