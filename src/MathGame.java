@@ -52,11 +52,12 @@ public class MathGame {
             } else {
                 System.out.println("INCORRECT!");
                 System.out.println("first: " + firstOut);
-                incorrect++;
+
                 if (count == 0) {
                     firstOut = currentPlayer.getName();
+                    incorrect++;
                 }
-                if (!(firstOut.equals(currentPlayer.getName())) && incorrect == 2) {
+                if (!(firstOut.equals(currentPlayer.getName())) && incorrect == 1) {
                     gameOver = true;
                 }
                 determineWinner();
@@ -82,6 +83,9 @@ public class MathGame {
         gameOver = false;
         currentPlayer = null;
         winner = null;
+        incorrect = 0;
+        firstOut = null;
+        count = 0;
     }
 
     private void chooseStartingPlayer() {

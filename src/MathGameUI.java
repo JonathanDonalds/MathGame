@@ -34,7 +34,7 @@ public class MathGameUI {
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("GAME HAS STARTED!");
             game.playRound(); // play one round of game
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~");
             System.out.println("GAME OVER!");
             if (game.getWinner() != null) {  // check for null just to be safe (so we don't call a method on null)
                 System.out.println("The winner was " + game.getWinner().getName());   // print winner's name
