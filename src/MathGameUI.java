@@ -6,15 +6,13 @@ public class MathGameUI {
     private Scanner scan;
 
     public MathGameUI() {
-        game = null; // initialized in setup()
+        game = null;
         scan = new Scanner(System.in);
         setup();
         mainMenu();
     }
 
-    // ------------ PRIVATE HELPER METHODS (internal use only) ------------
     private void setup() {
-        // get player names
         System.out.println("Welcome to the Math Game!");
         System.out.print("Enter player 1's name: ");
         String p1Name = scan.nextLine();
@@ -23,7 +21,6 @@ public class MathGameUI {
         System.out.print("Enter player 3's name: ");
         String p3Name = scan.nextLine();
 
-        // initialize Player objects and MathGame object
         Player p1 = new Player(p1Name);
         Player p2 = new Player(p2Name);
         Player p3 = new Player(p3Name);
@@ -46,7 +43,12 @@ public class MathGameUI {
             }
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.print("Want to play another round? y/n: ");
-            playAgain = scan.nextLine().toLowerCase(); // take input and covert to lowercase
+            playAgain = scan.nextLine().toLowerCase();
+            while (!playAgain.equals("y") && !playAgain.equals("n")) {
+                System.out.println("Invalid response!");
+                System.out.print("Want to play another round? y/n: ");
+                playAgain = scan.nextLine().toLowerCase();
+            }
         }
         System.out.println("Thanks for playing the Math Game! Goodbye!");
     }
