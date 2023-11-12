@@ -51,14 +51,14 @@ public class MathGame {
                 swapPlayers();
             } else {
                 System.out.println("INCORRECT!");
+                System.out.println("first: " + firstOut);
                 incorrect++;
                 if (count == 0) {
                     firstOut = currentPlayer.getName();
                 }
-                if (firstOut.equals(currentPlayer.getName()) && incorrect == 2) {
+                if (!(firstOut.equals(currentPlayer.getName())) && incorrect == 2) {
                     gameOver = true;
                 }
-                gameOver = incorrect == 2;
                 determineWinner();
                 swapPlayers();
                 count++;

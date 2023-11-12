@@ -44,7 +44,7 @@ public class MathGameUI {
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.print("Want to play another round? y/n: ");
             playAgain = scan.nextLine().toLowerCase();
-            while (!playAgain.equals("y") && !playAgain.equals("n")) {
+            while (!(playAgain.equals("y")) && !(playAgain.equals("n"))) {
                 System.out.println("Invalid response!");
                 System.out.print("Want to play another round? y/n: ");
                 playAgain = scan.nextLine().toLowerCase();
