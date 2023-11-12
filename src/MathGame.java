@@ -137,18 +137,20 @@ public class MathGame {
 
     // sets the winner when the game ends based on the player that missed the question
     private void determineWinner() {
-        if (currentPlayer == player1) {
+        if (player1.getScore() > player2.getScore()) {
+            if (player1.getScore() > player3.getScore()) {
+                winner = player1;
+                p1Streak++;
+                streak = p1Streak;
+            } else {
+                winner = player3;
+                p3Streak++;
+                streak = p3Streak;
+            }
+        } else if (player2.getScore() > player3.getScore()) {
             winner = player2;
             p2Streak++;
             streak = p2Streak;
-        } else if (currentPlayer == player2) {
-            winner = player3;
-            p3Streak++;
-            streak = p3Streak;
-        } else {
-            winner = player1;
-            p1Streak++;
-            streak = p1Streak;
         }
     }
 
